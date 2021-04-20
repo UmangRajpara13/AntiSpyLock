@@ -1,0 +1,93 @@
+--repeat		01 234 567 89	
+			10 325 476 98	c	  	
+			83 052 749 61	B	
+			38 507 294 16	C
+			65 870 921 43	A
+			56 789 012 34	SKIPPED
+			47 698 103 25	A
+			74 961 830 52	D
+			29 416 385 07	A
+			92 143 658 70	C
+--repeat		01 234 567 89 	SKIPPED
+
+BBCB 
+
+			13 579 024 68	B
+			37 048 159 26	B
+			74 196 308 52	D
+			49 382 716 05	a
+			98 765 432 10	B
+			86 420 975 31	B
+			62 951 840 73	B
+			25 803 691 47	d
+			50 617 283 94	A
+			01 234 567 89
+				
+			
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+	{
+	
+	int b[10]={0,1,2,3,4,5,6,7,8,9};
+    	int a[10];
+    	int n = 0;
+    	
+	    for (unsigned i = 0; i < 10; i++)
+	    {
+		cout << a[i];
+	    }
+    	cout << endl;
+	
+	while(n < 100)
+		{
+		//swap    
+		    for (unsigned j = 0; j < 10; j++)
+		    {
+			int temp; int* a = &b[j]; int* c = &b[j+1];
+			temp = *a;
+			*a = *c;
+			*c = temp;
+			j++;
+		    }
+		//print b
+		    for (unsigned i = 0; i < 10; i++)
+		    {
+			cout << b[i];
+		    }
+		    cout << endl;
+		//oddeven
+		    for (unsigned j = 0,i = 0; j < 10;i < 5; j++;i++)
+		    {
+		    	a[i]=b[j]; j++;
+		    }
+		    for (unsigned j = 1,i = 5; j < 10;i < 10; j++;i++)
+		    {
+		    	a[i]=b[j]; j++;
+		    }
+		/*
+		//swap    
+		    for (unsigned j = 1; j < 8; j++)
+		    {
+			int temp; int* a = &b[j]; int* c = &b[j+1];
+			temp = *a;
+			*a = *c;
+			*c = temp;
+			j++;
+		    }
+			int temp; int* x = &b[0]; int* y = &b[9];
+			temp = *x;
+			*x = *y;
+			*y = temp;
+		//print b
+		    for (unsigned i = 0; i < 10; i++)
+		    {
+			cout << b[i];
+		    }
+		    cout << endl;
+		*/
+		}    
+}
